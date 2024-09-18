@@ -16,7 +16,7 @@
                     query: {
                       code: {
                         $or: ['http://loinc.org|8302-2', //Body Height
-                            
+                              'http://loinc.org|8310-5', //Temperature              
                               'http://loinc.org|2085-9', //HDL
                               'http://loinc.org|2089-1', //LDL
                               'http://loinc.org|85354-9'] //Blood pressure systolic and diastolic
@@ -53,7 +53,7 @@
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);
 
-          p.temperature=temperature;
+    //      p.temperature=temperature;
 
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
@@ -65,7 +65,7 @@
 
           p.hdl = getQuantityValueAndUnit(hdl[0]);
           p.ldl = getQuantityValueAndUnit(ldl[0]);
-
+          p.temperature = getQuantityValueAndUnit(temperature[0]);
         
 
           ret.resolve(p);
@@ -91,7 +91,7 @@
       diastolicbp: {value: ''},
       ldl: {value: ''},
       hdl: {value: ''},
-      temperature: {value: ''},
+      temperature: {value: ''}
     };
   }
 
