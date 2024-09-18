@@ -53,6 +53,8 @@
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);
 
+          p.temperature=temperature;
+
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
           }
@@ -64,7 +66,7 @@
           p.hdl = getQuantityValueAndUnit(hdl[0]);
           p.ldl = getQuantityValueAndUnit(ldl[0]);
 
-          p.temperature=temperature;
+        
 
           ret.resolve(p);
         });
@@ -133,6 +135,7 @@
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
+    $('#temperature').html(p.temperature);
   };
 
 })(window);
